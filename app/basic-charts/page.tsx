@@ -1,6 +1,9 @@
 "use client";
 
 import { VictoryBar, VictoryChart } from "victory";
+import "@picocss/pico/css/pico.classless.css";
+import styles from "./page.module.css";
+import "./../globals.css";
 
 // here goes the data for the charts
 const firstVictoryBarData = [

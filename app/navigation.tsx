@@ -1,5 +1,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import "@picocss/pico/css/pico.classless.css";
 
 export function Navigation({ navLinks }) {
     const pathname = usePathname();

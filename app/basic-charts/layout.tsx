@@ -1,3 +1,6 @@
+import "@picocss/pico/css/pico.classless.css";
+import "./../globals.css";
+
 export default function DashboardLayout({
     children, // will be a page or nested layout
 }: {

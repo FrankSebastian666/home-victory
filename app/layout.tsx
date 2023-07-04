@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Metadata } from "next";
+import "@picocss/pico/css/pico.classless.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Charts with Victory",
