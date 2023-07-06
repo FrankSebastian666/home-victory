@@ -16,7 +16,7 @@ const firstVictoryBarData = [
 // this is the UI for the basic-charts URL
 export default function Page() {
     return (
-        <main>
+        <section>
             <div>
                 <h1>Basic Charts with Victory</h1>
             </div>
@@ -32,6 +32,6 @@ export default function Page() {
                     />
                 </VictoryChart>
             </div>
-        </main>
+        </section>
     );
 }
