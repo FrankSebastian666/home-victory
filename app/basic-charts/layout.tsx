@@ -1,4 +1,4 @@
-import "@picocss/pico/css/pico.classless.css";
+import "@picocss/pico/css/pico.css";
 import "./../globals.css";
 
 export default function Layout({

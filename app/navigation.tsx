@@ -22,6 +22,15 @@ const Navbar = () => {
             <ul>
                 <li>
                     <Link
+                        href="/requirements"
+                        className={getCurrentRoute === "/requirements" ? "active-nav-link" : "secondary outline"}
+                        role="button"
+                    >
+                        Requirements
+                    </Link>
+                </li>
+                <li>
+                    <Link
                         href="/basic-charts"
                         className={getCurrentRoute === "/basic-charts" ? "active-nav-link" : "secondary outline"}
                         role="button"

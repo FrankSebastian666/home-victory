@@ -1,8 +1,7 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 import Link from "next/link";
 import React from "react";
-import "@picocss/pico/css/pico.classless.css";
+import "@picocss/pico/css/pico.css";
 import "./globals.css";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";

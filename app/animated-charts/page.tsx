@@ -1,14 +1,8 @@
 "use client";
 
-import "@picocss/pico/css/pico.classless.css";
-import styles from "./page.module.css";
+import "@picocss/pico/css/pico.css";
+import "./../globals.css";
 
 export default function Page() {
-    return (
-        <main>
-            <div>
-                <h1>Animated Charts with Victory</h1>
-            </div>
-        </main>
-    );
+    return <h1>Animated Charts with Victory</h1>;
 }
