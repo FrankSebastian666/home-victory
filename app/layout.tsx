@@ -2,10 +2,11 @@ import "./globals.css";
 import { Metadata } from "next";
 import "@picocss/pico/css/pico.classless.css";
 import "./globals.css";
+import Navbar from "./navigation";
 
 export const metadata: Metadata = {
     title: "Charts with Victory",
-    description: "Overview of charts with Victory Library in Next.js",
+    description: "Example charts with Victory Library in Next.js",
     viewport: {
         width: "device-width",
         initialScale: 1,
@@ -16,7 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
