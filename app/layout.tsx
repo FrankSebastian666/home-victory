@@ -29,11 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Navbar />
                 </header>
                 <main>{children}</main>
-                <footer>
-                    <button className="contrast theme-switcher" aria-label="Turn off dark mode">
-                        Switch Theme
-                    </button>
-                </footer>
+                <footer></footer>
             </body>
         </html>
     );

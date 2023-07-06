@@ -10,9 +10,12 @@ export default function Home() {
         <main>
             <h1>Sample Project for Victory</h1>
 
-            <div>
-                <Link href="/basic-charts">Basic Charts</Link>
-            </div>
+            <article>
+                <div>
+                    <Link href="/basic-charts">Basic Charts</Link>
+                </div>
+                <code>insert react syntax highlighting here</code>
+            </article>
         </main>
     );
 }
