@@ -3,6 +3,7 @@
 import { VictoryBar, VictoryChart } from "victory";
 import "@picocss/pico/css/pico.classless.css";
 import "./../globals.css";
+import Link from "next/link";
 
 // here goes the data for the charts
 const firstVictoryBarData = [
@@ -16,9 +17,15 @@ const firstVictoryBarData = [
 export default function Page() {
     return (
         <article>
-            <div>
-                <h1>Basic Charts with Victory</h1>
-            </div>
+            <h1>Basic Charts with Victory</h1>
+
+            <h2>Säulendiagramme</h2>
+            <code>
+                Victory-Component:{" "}
+                <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
+                    VictoryBar
+                </Link>
+            </code>
 
             <div className="basic-victory-bar">
                 <VictoryChart>
