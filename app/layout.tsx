@@ -29,7 +29,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Navbar />
                 </header>
                 <main>{children}</main>
-                <footer></footer>
+                <footer>
+                    <div className="grid">
+                        <div>
+                            <small>Hochschule Merseburg</small>
+                            <small>Masterstudiengang IDMM</small>
+                            <small>Modul Webentwicklung</small>
+                            <small>Dozent: Dr. Thomas Meinike</small>
+                        </div>
+                        <div>
+                            <small>Sommersemester 2023</small>
+                            <small>Sebastian Frank</small>
+                            <small>Matr.-Nr.: XSSFSF</small>
+                            <small>sebastian.frank2@stud.hs-merseburg.de</small>
+                        </div>
+                    </div>
+                </footer>
             </body>
         </html>
     );
