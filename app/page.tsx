@@ -5,6 +5,8 @@ import React from "react";
 import "@picocss/pico/css/pico.classless.css";
 import "./globals.css";
 
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 export default function Home() {
     return (
         <main>
