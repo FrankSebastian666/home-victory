@@ -2,7 +2,6 @@
 
 import { VictoryBar, VictoryChart } from "victory";
 import "@picocss/pico/css/pico.classless.css";
-import styles from "./page.module.css";
 import "./../globals.css";
 
 // here goes the data for the charts
@@ -16,7 +15,7 @@ const firstVictoryBarData = [
 // this is the UI for the basic-charts URL
 export default function Page() {
     return (
-        <section>
+        <article>
             <div>
                 <h1>Basic Charts with Victory</h1>
             </div>
@@ -32,6 +31,6 @@ export default function Page() {
                     />
                 </VictoryChart>
             </div>
-        </section>
+        </article>
     );
 }

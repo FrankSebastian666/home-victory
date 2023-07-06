@@ -8,9 +8,7 @@ import "./globals.css";
 export default function Home() {
     return (
         <main>
-            <div>
-                <h1>Sample Project for Victory</h1>
-            </div>
+            <h1>Sample Project for Victory</h1>
 
             <div>
                 <Link href="/basic-charts">Basic Charts</Link>
