@@ -1,6 +1,7 @@
 "use client";
 
-import { VictoryAxis, VictoryBar, VictoryChart, VictoryTheme } from "victory";
+import { VictoryAxis, VictoryBar, VictoryChart, VictoryGroup, VictoryTheme } from "victory";
+import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
 
 import Link from "next/link";
 
@@ -19,7 +20,7 @@ export default function Page() {
             <h1>Advanced Charts with Victory</h1>
 
             <article>
-                <h2>Säulendiagramme</h2>
+                <h2>Einfaches Säulendiagramm</h2>
                 <code>
                     Victory-Component:{" "}
                     <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
@@ -37,21 +38,25 @@ export default function Page() {
                         domainPadding={20}
                         // setting the height of the chart
                         height={200}
+                        // set padding so the complete content is visible
+                        padding={{ top: 40, bottom: 50, left: 80, right: 40 }}
                     >
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4]}
-                            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+                            tickFormat={["Q1", "Q2", "Q3", "Q4"]}
+                            label="Quartal"
+                            style={{ axisLabel: { padding: 30 } }}
                         />
 
                         <VictoryAxis
                             dependentAxis
                             // tickFormat specifies how ticks should be displayed
                             tickFormat={(x: any) => `$${x / 1000}k`}
+                            label="Earnings"
+                            style={{ axisLabel: { padding: 50 } }}
                         />
 
                         <VictoryBar
-                            // adding the data to the chart
-                            data={firstVictoryBarData}
                             // data accessor for x values
                             x="quarter"
                             // data accessor for y values
@@ -59,7 +64,8 @@ export default function Page() {
                             // adding rounded corners at the top of the bars
                             cornerRadius={{ topLeft: 2, topRight: 2 }}
                             // adding an event to the bars
-                            events={[{
+                            events={[
+                                {
                                     target: "data",
                                     eventHandlers: {
                                         onClick: () => {
@@ -68,12 +74,90 @@ export default function Page() {
                                                     target: "data",
                                                     mutation: (props) => {
                                                         const fill = props.style && props.style.fill;
-                                                        return fill === "black" ? null : {style: { fill: "black"} }
-                                                }
+                                                        return fill === "red" ? null : { style: { fill: "red" } };
+                                                    },
+                                                },
                                             ];
-                                        }
-                                }]}
+                                        },
+                                    },
+                                },
+                            ]}
+                            // adding the data to the chart
+                            data={firstVictoryBarData}
                         />
+                    </VictoryChart>
+                </div>
+            </article>
+            <article>
+                <h3>Gestapeltes Säulendiagramm</h3>
+                <code>
+                    Victory-Component:{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-group" target="blank">
+                        VictoryGroup
+                    </Link>
+                </code>
+                <div>
+                    <VictoryChart
+                        // specify the title to be applied to the SVG to assist with accessibility for screen readers
+                        title="Gruped Bar Chart"
+                        // adding the material theme provided with Victory, alternative would be grayscale
+                        theme={VictoryTheme.material}
+                        // prevent the bars from overlapping the axis
+                        domainPadding={20}
+                        // setting the height of the chart
+                        height={200}
+                        // set padding so the complete content is visible
+                        padding={{ top: 40, bottom: 50, left: 80, right: 40 }}
+                    >
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4]}
+                            tickFormat={["Q1", "Q2", "Q3", "Q4"]}
+                            label="Quartal"
+                            style={{ axisLabel: { padding: 30 } }}
+                        />
+
+                        <VictoryAxis
+                            dependentAxis
+                            // tickFormat specifies how ticks should be displayed
+                            tickFormat={(x: any) => `$${x / 1000}k`}
+                            label="Earnings"
+                            style={{ axisLabel: { padding: 50 } }}
+                        />
+
+                        <VictoryGroup offset={8} colorScale={"qualitative"}>
+                            <VictoryBar
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // adding the data to the chart
+                                data={secondVictoryBarData[2019]}
+                            />
+                            <VictoryBar
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // adding the data to the chart
+                                data={secondVictoryBarData[2020]}
+                            />
+                            <VictoryBar
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // adding the data to the chart
+                                data={secondVictoryBarData[2021]}
+                            />
+                            <VictoryBar
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // adding the data to the chart
+                                data={secondVictoryBarData[2022]}
+                            />
+                        </VictoryGroup>
                     </VictoryChart>
                 </div>
             </article>

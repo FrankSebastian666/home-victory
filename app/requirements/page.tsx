@@ -105,6 +105,9 @@ export default function Page() {
                     <div>
                         <h2>Beispielprojekt mit Next.js</h2>
                         <ul>
+                            <li>
+                                Siehe <a href="https://nextjs.org/docs">Next.js Dokumentation</a>
+                            </li>
                             <li>App Directory mit globalem CSS-File, Layout-File, Navigation-File und Index-Seite</li>
                             <li>Subfolder in App Directory mit untergeordnetem Layout und Pages</li>
                             <li>Namen der Subfolder in App Directory landen in URL-Segment</li>

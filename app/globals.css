@@ -5,3 +5,13 @@
 h1 {
     text-align: center;
 }
+
+.basic-charts-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 500px;
+    max-width: 500px;
+}
