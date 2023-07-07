@@ -33,14 +33,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <div className="grid">
                         <div>
                             <small>Hochschule Merseburg</small>
+                            <br />
                             <small>Masterstudiengang IDMM</small>
+                            <br />
                             <small>Modul Webentwicklung</small>
+                            <br />
                             <small>Dozent: Dr. Thomas Meinike</small>
                         </div>
                         <div>
                             <small>Sommersemester 2023</small>
+                            <br />
                             <small>Sebastian Frank</small>
-                            <small>Matr.-Nr.: XSSFSF</small>
+                            <br />
+                            <small>Matr.-Nr.: 27103</small>
+                            <br />
                             <small>sebastian.frank2@stud.hs-merseburg.de</small>
                         </div>
                     </div>

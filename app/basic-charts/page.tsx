@@ -29,6 +29,8 @@ export default function Page() {
 
                 <div className="basic-victory-bar">
                     <VictoryChart
+                        // specify the title to be applied to the SVG to assist with accessibility for screen readers
+                        title="First Bar Chart"
                         // adding the material theme provided with Victory, alternative would be grayscale
                         theme={VictoryTheme.material}
                         // prevent the bars from overlapping the axis
