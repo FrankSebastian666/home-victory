@@ -1,6 +1,6 @@
 "use client";
 
-import { VictoryAxis, VictoryBar, VictoryChart, VictoryGroup, VictoryTheme } from "victory";
+import { Flyout, VictoryAxis, VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryTooltip } from "victory";
 import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
 
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default function Page() {
             <h1>Advanced Charts with Victory</h1>
 
             <article>
-                <h2>Einfaches Säulendiagramm</h2>
+                <h2>Säulendiagramm</h2>
                 <code>
                     Victory-Component:{" "}
                     <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
@@ -31,7 +31,7 @@ export default function Page() {
                 <div className="basic-victory-bar">
                     <VictoryChart
                         // specify the title to be applied to the SVG to assist with accessibility for screen readers
-                        title="First Bar Chart"
+                        title="First Advanced Bar Chart"
                         // adding the material theme provided with Victory, alternative would be grayscale
                         theme={VictoryTheme.material}
                         // prevent the bars from overlapping the axis
@@ -57,12 +57,27 @@ export default function Page() {
                         />
 
                         <VictoryBar
+                            // adding the data to the chart
+                            data={firstVictoryBarData}
                             // data accessor for x values
                             x="quarter"
                             // data accessor for y values
                             y="earnings"
                             // adding rounded corners at the top of the bars
                             cornerRadius={{ topLeft: 2, topRight: 2 }}
+                            // styling bar ratio
+                            barRatio={0.5}
+                            // adding tooltips with labels to the bars
+                            labels={({ datum }) => `$ ${datum.earnings}`}
+                            labelComponent={
+                                <VictoryTooltip
+                                    // adding a custom flyout to the tooltip
+                                    pointerLength={20}
+                                    pointerWidth={5}
+                                    style={{ fill: "white" }}
+                                    flyoutStyle={{ stroke: "none", fill: "jungle" }}
+                                />
+                            }
                             // adding an event to the bars
                             events={[
                                 {
@@ -82,8 +97,6 @@ export default function Page() {
                                     },
                                 },
                             ]}
-                            // adding the data to the chart
-                            data={firstVictoryBarData}
                         />
                     </VictoryChart>
                 </div>
