@@ -1,13 +1,16 @@
 "use client";
 
 import {
+    Background,
     VictoryArea,
     VictoryAxis,
     VictoryBar,
     VictoryChart,
+    VictoryGroup,
     VictoryHistogram,
     VictoryLine,
     VictoryPie,
+    VictoryStack,
     VictoryTheme,
 } from "victory";
 import Link from "next/link";
@@ -125,7 +128,7 @@ export default function Page() {
             </section>
 
             <section>
-                <h2>Einfache Charts</h2>
+                <h2>Einfache Charts ohne Achsen</h2>
                 <article>
                     <h3>Säulendiagramm</h3>
                     <code>
@@ -136,34 +139,15 @@ export default function Page() {
                     </code>
                     <div>
                         <div className="basic-charts-div">
-                            <VictoryChart
-                                // specify the title to be applied to the SVG to assist with accessibility for screen readers
-                                title="First Bar Chart"
-                                // adding the material theme provided with Victory, alternative would be grayscale
+                            <VictoryBar
+                                data={firstVictoryBarData}
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // select a premade Victory theme
                                 theme={VictoryTheme.material}
-                                // prevent the bars from overlapping the axis
-                                domainPadding={20}
-                            >
-                                <VictoryAxis
-                                    tickValues={[1, 2, 3, 4]}
-                                    // tickFormat specifies how ticks should be named
-                                    tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
-                                />
-
-                                <VictoryAxis
-                                    dependentAxis
-                                    // tickFormat specifies how ticks should be displayed
-                                    tickFormat={(x: any) => `$${x / 1000}k`}
-                                />
-
-                                <VictoryBar
-                                    data={firstVictoryBarData}
-                                    // data accessor for x values
-                                    x="quarter"
-                                    // data accessor for y values
-                                    y="earnings"
-                                />
-                            </VictoryChart>
+                            />
                         </div>
                         <div className="image-container">
                             <Image
@@ -258,6 +242,209 @@ export default function Page() {
                         <Image
                             src="/../public/images/codesnap/basic-charts-Line.png"
                             width={900}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+            </section>
+            <section>
+                <h2>Wichtige Victory-Components für sinnvolle Charts</h2>
+                <article>
+                    <h3>Universeller Wrapper: VictoryChart</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-chart/" target="blank">
+                            VictoryChart
+                        </Link>
+                    </code>
+                    <ul>
+                        <li>Rendert ein Set von Victory Children Components und dient somit als Wrapper</li>
+                        <li>
+                            Kontrolliert das Layout der Victory Components, wie z.B. die Positionierung der Achsen oder
+                            die Farbgebung
+                        </li>
+                        <li>Koordinert Animationen und Events zwischen den Victory Children Components</li>
+                        <li>Sind keine Children verfügbar, werden leere Standard-Achsen gerendert</li>
+                    </ul>
+                    <div className="basic-charts-div">
+                        <VictoryChart
+                            height={300}
+                            width={300}
+                            domain={[-2, 2]}
+                            style={{ background: { fill: "yellow" } }}
+                            backgroundComponent={<Background y={50} height={100} />}
+                        />
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Chart.png"
+                            width={800}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+                <article>
+                    <h3>Achsen: VictoryAxis</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-chart/" target="blank">
+                            VictoryAxis
+                        </Link>
+                    </code>
+                    <ul>
+                        <li>Rendert eine einzige Achse</li>
+                        <li>
+                            Kann allein verwendet werden oder innerhalb VictoryChart mit anderen Achsen gruppiert werden
+                        </li>
+                    </ul>
+                    <div className="basic-chart-container">
+                        <VictoryChart height={400} width={400} theme={VictoryTheme.material}>
+                            <VictoryAxis
+                                // set crossAxis if two axes will cross each other, 0 tick will be removed
+                                crossAxis
+                                width={400}
+                                height={400}
+                                // domain defines the range of values your axis will include
+                                domain={[-10, 10]}
+                                // offset defines the offset of the axis from the edge of the chart
+                                offsetY={200}
+                            />
+                            <VictoryAxis
+                                dependentAxis
+                                crossAxis
+                                width={400}
+                                height={400}
+                                domain={[-10, 10]}
+                                offsetX={200}
+                            />
+                        </VictoryChart>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Axis.png"
+                            width={1000}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+                <article>
+                    <h3>Stapeln: VictoryStack</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-chart/" target="blank">
+                            VictoryStack
+                        </Link>
+                    </code>
+                    <ul>
+                        <li>Rendert Victory Children Komponenten in gesstapeltem Layout</li>
+                        <li>Ähnlich wie Victorychart ein Wrapper-Component, der Layout an Children vererben kann</li>
+                        <li>
+                            Funktioniert mit VictoryArea, VictoryBar, VictoryCandlestick, VictoryErrorBar,
+                            VictoryGroup,VictoryLine, VictoryScatter, VictoryHistogram
+                        </li>
+                        <li>VictoryHistogram kann nicht mit anderen Component-Arten gestapelt werden</li>
+                    </ul>
+                    <div className="basic-chart-container">
+                        <VictoryStack height={200} width={300} theme={VictoryTheme.material}>
+                            <VictoryArea
+                                data={[
+                                    { x: "a", y: 2 },
+                                    { x: "b", y: 3 },
+                                    { x: "c", y: 5 },
+                                ]}
+                            />
+                            <VictoryArea
+                                data={[
+                                    { x: "a", y: 1 },
+                                    { x: "b", y: 4 },
+                                    { x: "c", y: 5 },
+                                ]}
+                            />
+                            <VictoryArea
+                                data={[
+                                    { x: "a", y: 3 },
+                                    { x: "b", y: 2 },
+                                    { x: "c", y: 6 },
+                                ]}
+                            />
+                        </VictoryStack>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Stack.png"
+                            width={800}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+                <article>
+                    <h3>Gruppieren: VictoryGroup</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-group/" target="blank">
+                            VictoryGroup
+                        </Link>
+                    </code>
+                    <ul>
+                        <li>Rendert ein Set von Victory Children Components und dient somit als Wrapper</li>
+                        <li>
+                            Kontrolliert das Layout der Victory Components, wie z.B. die Positionierung der Achsen oder
+                            die Farbgebung
+                        </li>
+                        <li>Koordinert Animationen und Events zwischen den Victory Children Components</li>
+                        <li>
+                            Funktioniert mit VictoryArea, VictoryBar, VictoryBoxPlot, VictoryCandlestick,
+                            VictoryErrorBar, VictoryLine, VictoryScatter, VictoryHistogram, VictoryStack und
+                            VictoryVoronoi.
+                        </li>
+                        <li>
+                            Innerhalb VictoryGroup sind keine Achsen erlaubt, diese sollten von VictoryChart umhüllt
+                            sein
+                        </li>
+                    </ul>
+                    <div className="basic-chart-container">
+                        <VictoryChart width={300} height={250}>
+                            <VictoryGroup
+                                offset={12}
+                                // colorScale kann auch explizit angegeben werden, ohne dass ein Theme verwendet wird
+                                colorScale={"qualitative"}
+                            >
+                                <VictoryBar
+                                    data={[
+                                        { x: 1, y: 1 },
+                                        { x: 2, y: 2 },
+                                        { x: 3, y: 5 },
+                                    ]}
+                                />
+                                <VictoryBar
+                                    data={[
+                                        { x: 1, y: 2 },
+                                        { x: 2, y: 1 },
+                                        { x: 3, y: 7 },
+                                    ]}
+                                />
+                                <VictoryBar
+                                    data={[
+                                        { x: 1, y: 3 },
+                                        { x: 2, y: 4 },
+                                        { x: 3, y: 9 },
+                                    ]}
+                                />
+                            </VictoryGroup>
+                        </VictoryChart>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Group.png"
+                            width={1000}
                             height={500}
                             quality={100}
                             alt="Code Snippet"
