@@ -1,6 +1,15 @@
 "use client";
 
-import { Flyout, VictoryAxis, VictoryBar, VictoryChart, VictoryGroup, VictoryTheme, VictoryTooltip } from "victory";
+import {
+    Flyout,
+    VictoryAxis,
+    VictoryBar,
+    VictoryChart,
+    VictoryGroup,
+    VictoryLegend,
+    VictoryTheme,
+    VictoryTooltip,
+} from "victory";
 import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
 
 import Link from "next/link";
@@ -102,7 +111,7 @@ export default function Page() {
                 </div>
             </article>
             <article>
-                <h3>Gestapeltes Säulendiagramm</h3>
+                <h3>Gestapeltes Säulendiagramm mit Legende</h3>
                 <code>
                     Victory-Component:{" "}
                     <Link href="https://formidable.com/open-source/victory/docs/victory-group" target="blank">
@@ -111,22 +120,19 @@ export default function Page() {
                 </code>
                 <div>
                     <VictoryChart
-                        // specify the title to be applied to the SVG to assist with accessibility for screen readers
+                        // set all children to be displayed horizontal (default is vertical)
+                        horizontal
                         title="Gruped Bar Chart"
-                        // adding the material theme provided with Victory, alternative would be grayscale
                         theme={VictoryTheme.material}
-                        // prevent the bars from overlapping the axis
                         domainPadding={20}
-                        // setting the height of the chart
-                        height={200}
-                        // set padding so the complete content is visible
-                        padding={{ top: 40, bottom: 50, left: 80, right: 40 }}
+                        height={300}
+                        padding={{ top: 40, bottom: 50, left: 60, right: 40 }}
                     >
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4]}
                             tickFormat={["Q1", "Q2", "Q3", "Q4"]}
                             label="Quartal"
-                            style={{ axisLabel: { padding: 30 } }}
+                            style={{ axisLabel: { padding: 35 } }}
                         />
 
                         <VictoryAxis
@@ -134,44 +140,86 @@ export default function Page() {
                             // tickFormat specifies how ticks should be displayed
                             tickFormat={(x: any) => `$${x / 1000}k`}
                             label="Earnings"
-                            style={{ axisLabel: { padding: 50 } }}
+                            style={{ axisLabel: { padding: 35 } }}
                         />
 
                         <VictoryGroup offset={8} colorScale={"qualitative"}>
                             <VictoryBar
-                                // data accessor for x values
                                 x="quarter"
-                                // data accessor for y values
                                 y="earnings"
-                                // adding the data to the chart
+                                // adding specific data to the chart
                                 data={secondVictoryBarData[2019]}
+                                labels={({ datum }) => `$ ${datum.earnings}`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        // adding a custom flyout to the tooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "jungle" }}
+                                    />
+                                }
                             />
                             <VictoryBar
-                                // data accessor for x values
                                 x="quarter"
-                                // data accessor for y values
                                 y="earnings"
-                                // adding the data to the chart
+                                // adding specific data to the chart
                                 data={secondVictoryBarData[2020]}
+                                labels={({ datum }) => `$ ${datum.earnings}`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        // adding a custom flyout to the tooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "rgb(69, 178, 157)" }}
+                                    />
+                                }
                             />
                             <VictoryBar
-                                // data accessor for x values
                                 x="quarter"
-                                // data accessor for y values
                                 y="earnings"
-                                // adding the data to the chart
+                                // adding specific data to the chart
                                 data={secondVictoryBarData[2021]}
+                                labels={({ datum }) => `$ ${datum.earnings}`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        // adding a custom flyout to the tooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "rgb(239, 201, 76)" }}
+                                    />
+                                }
                             />
                             <VictoryBar
-                                // data accessor for x values
                                 x="quarter"
-                                // data accessor for y values
                                 y="earnings"
-                                // adding the data to the chart
+                                // adding specific data to the chart
                                 data={secondVictoryBarData[2022]}
+                                labels={({ datum }) => `$ ${datum.earnings}`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        // adding a custom flyout to the tooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "rgb(226, 122, 63)" }}
+                                    />
+                                }
                             />
                         </VictoryGroup>
                     </VictoryChart>
+                    <VictoryLegend
+                        // x={125}
+                        // y={10}
+                        title="Legend"
+                        centerTitle
+                        orientation="horizontal"
+                        gutter={10}
+                        style={{ border: { stroke: "black" }, title: { fontSize: 20 } }}
+                        data={[{ name: "One" }, { name: "Two" }, { name: "Three" }]}
+                    />
                 </div>
             </article>
         </div>
