@@ -10,9 +10,10 @@ import {
     VictoryTheme,
     VictoryTooltip,
 } from "victory";
+import Link from "next/link";
 import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
 
-import Link from "next/link";
+const secondVictoryBarDataKey = Object.keys(secondVictoryBarData);
 
 // here goes the sample data for the first basic chart
 const firstVictoryBarData = [
@@ -210,16 +211,42 @@ export default function Page() {
                             />
                         </VictoryGroup>
                     </VictoryChart>
-                    <VictoryLegend
-                        // x={125}
-                        // y={10}
-                        title="Legend"
-                        centerTitle
-                        orientation="horizontal"
-                        gutter={10}
-                        style={{ border: { stroke: "black" }, title: { fontSize: 20 } }}
-                        data={[{ name: "One" }, { name: "Two" }, { name: "Three" }]}
-                    />
+                    <div className="victory-label-center-div">
+                        <VictoryLegend
+                            // setting width of the legend component
+                            height={50}
+                            // setting a title for the legend
+                            title="Legend"
+                            // center the legend title
+                            centerTitle
+                            // set orientation to horizontal or vertical (default value is vertical)
+                            orientation="horizontal"
+                            // setting an absolute value for horizontal alignment of the legend, relative value not possible
+                            x={100}
+                            // setting distance between legend data points
+                            gutter={25}
+                            style={{
+                                border: { stroke: "none" },
+                                title: { fontSize: 14, display: "none" },
+                                labels: { fontSize: 12 },
+                            }}
+                            data={[
+                                { name: secondVictoryBarDataKey[0], symbol: { fill: "jungle" } },
+                                {
+                                    name: secondVictoryBarDataKey[1],
+                                    symbol: { fill: "rgb(69, 178, 157)", type: "star" },
+                                },
+                                {
+                                    name: secondVictoryBarDataKey[2],
+                                    symbol: { fill: "rgb(239, 201, 76)", type: "diamond" },
+                                },
+                                {
+                                    name: secondVictoryBarDataKey[3],
+                                    symbol: { fill: "rgb(226, 122, 63)", type: "plus" },
+                                },
+                            ]}
+                        />
+                    </div>
                 </div>
             </article>
         </div>

@@ -128,128 +128,6 @@ export default function Page() {
             </section>
 
             <section>
-                <h2>Einfache Charts ohne Achsen</h2>
-                <article>
-                    <h3>Säulendiagramm</h3>
-                    <code>
-                        Victory-Component:{" "}
-                        <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
-                            VictoryBar
-                        </Link>
-                    </code>
-                    <div>
-                        <div className="basic-charts-div">
-                            <VictoryBar
-                                data={firstVictoryBarData}
-                                // data accessor for x values
-                                x="quarter"
-                                // data accessor for y values
-                                y="earnings"
-                                // select a premade Victory theme
-                                theme={VictoryTheme.material}
-                            />
-                        </div>
-                        <div className="image-container">
-                            <Image
-                                src="/../public/images/codesnap/basic-charts-Bar.png"
-                                width={2000}
-                                height={2000}
-                                quality={100}
-                                alt="Code Snippet"
-                            />
-                        </div>
-                    </div>
-                </article>
-
-                <article>
-                    <h3>Kreisdiagramm</h3>
-                    <code>
-                        Victory-Component:{" "}
-                        <Link href="https://formidable.com/open-source/victory/docs/victory-pie" target="blank">
-                            VictoryPie
-                        </Link>
-                    </code>
-                    <div>
-                        <div className="basic-charts-div">
-                            <VictoryPie
-                                x="quarter"
-                                y="earnings"
-                                data={firstVictoryPieData}
-                                theme={VictoryTheme.material}
-                            />
-                        </div>
-                    </div>
-                    <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Pie.png"
-                            width={2000}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
-                    </div>
-                </article>
-
-                <article>
-                    <h3>Flächendiagramm</h3>
-                    <code>
-                        Victory-Component:{" "}
-                        <Link href="https://formidable.com/open-source/victory/docs/victory-area/" target="blank">
-                            VictoryArea
-                        </Link>
-                    </code>
-                    <div>
-                        <div className="basic-charts-div">
-                            <VictoryChart theme={VictoryTheme.material}>
-                                <VictoryAxis tickValues={[1, 2, 3, 4]} tickFormat={["Q1", "Q2", "Q3", "Q4"]} />
-
-                                <VictoryAxis
-                                    dependentAxis
-                                    // tickFormat specifies how ticks should be displayed
-                                    tickFormat={(x: any) => `$${x / 1000}k`}
-                                />
-                                <VictoryArea data={firstVictoryBarData} x="quarter" y="earnings" />
-                            </VictoryChart>
-                        </div>
-                    </div>
-                    <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Area.png"
-                            width={900}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
-                    </div>
-                </article>
-
-                <article>
-                    <h3>Liniendiagramm</h3>
-                    <code>
-                        Victory-Component:{" "}
-                        <Link href="https://formidable.com/open-source/victory/docs/victory-line" target="blank">
-                            VictoryLine
-                        </Link>
-                    </code>
-                    <div>
-                        <div className="basic-charts-div">
-                            <VictoryChart theme={VictoryTheme.material}>
-                                <VictoryLine x="year" y="earnings" data={firstVictoryLineChartData} />
-                            </VictoryChart>
-                        </div>
-                    </div>
-                    <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Line.png"
-                            width={900}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
-                    </div>
-                </article>
-            </section>
-            <section>
                 <h2>Wichtige Victory-Components für sinnvolle Charts</h2>
                 <article>
                     <h3>Universeller Wrapper: VictoryChart</h3>
@@ -445,6 +323,129 @@ export default function Page() {
                         <Image
                             src="/../public/images/codesnap/basic-charts-Group.png"
                             width={1000}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+            </section>
+
+            <section>
+                <h2>Einfache Charts</h2>
+                <article>
+                    <h3>Säulendiagramm</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
+                            VictoryBar
+                        </Link>
+                    </code>
+                    <div>
+                        <div className="basic-charts-div">
+                            <VictoryBar
+                                data={firstVictoryBarData}
+                                // data accessor for x values
+                                x="quarter"
+                                // data accessor for y values
+                                y="earnings"
+                                // select a premade Victory theme
+                                theme={VictoryTheme.material}
+                            />
+                        </div>
+                        <div className="image-container">
+                            <Image
+                                src="/../public/images/codesnap/basic-charts-Bar.png"
+                                width={2000}
+                                height={2000}
+                                quality={100}
+                                alt="Code Snippet"
+                            />
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Kreisdiagramm</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-pie" target="blank">
+                            VictoryPie
+                        </Link>
+                    </code>
+                    <div>
+                        <div className="basic-charts-div">
+                            <VictoryPie
+                                x="quarter"
+                                y="earnings"
+                                data={firstVictoryPieData}
+                                theme={VictoryTheme.material}
+                            />
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Pie.png"
+                            width={2000}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Flächendiagramm</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-area/" target="blank">
+                            VictoryArea
+                        </Link>
+                    </code>
+                    <div>
+                        <div className="basic-charts-div">
+                            <VictoryChart theme={VictoryTheme.material}>
+                                <VictoryAxis tickValues={[1, 2, 3, 4]} tickFormat={["Q1", "Q2", "Q3", "Q4"]} />
+
+                                <VictoryAxis
+                                    dependentAxis
+                                    // tickFormat specifies how ticks should be displayed
+                                    tickFormat={(x: any) => `$${x / 1000}k`}
+                                />
+                                <VictoryArea data={firstVictoryBarData} x="quarter" y="earnings" />
+                            </VictoryChart>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Area.png"
+                            width={900}
+                            height={500}
+                            quality={100}
+                            alt="Code Snippet"
+                        />
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Liniendiagramm</h3>
+                    <code>
+                        Victory-Component:{" "}
+                        <Link href="https://formidable.com/open-source/victory/docs/victory-line" target="blank">
+                            VictoryLine
+                        </Link>
+                    </code>
+                    <div>
+                        <div className="basic-charts-div">
+                            <VictoryChart theme={VictoryTheme.material}>
+                                <VictoryLine x="year" y="earnings" data={firstVictoryLineChartData} />
+                            </VictoryChart>
+                        </div>
+                    </div>
+                    <div className="image-container">
+                        <Image
+                            src="/../public/images/codesnap/basic-charts-Line.png"
+                            width={900}
                             height={500}
                             quality={100}
                             alt="Code Snippet"
