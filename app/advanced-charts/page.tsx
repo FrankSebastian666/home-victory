@@ -12,6 +12,7 @@ import {
 } from "victory";
 import Link from "next/link";
 import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
+import Image from "next/image";
 
 const secondVictoryBarDataKey = Object.keys(secondVictoryBarData);
 
@@ -32,9 +33,21 @@ export default function Page() {
             <article>
                 <h2>Säulendiagramm</h2>
                 <code>
-                    Victory-Component:{" "}
+                    Victory-Components:{" "}
                     <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
                         VictoryBar
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-chart" target="blank">
+                        VictoryChart
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-axis" target="blank">
+                        VictoryAxis
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-tooltip" target="blank">
+                        VictoryTooltip
                     </Link>
                 </code>
 
@@ -88,7 +101,7 @@ export default function Page() {
                                     flyoutStyle={{ stroke: "none", fill: "jungle" }}
                                 />
                             }
-                            // adding basic animations to the bars
+                            // adding basic animation to the bars
                             animate={{
                                 onEnter: { duration: 3000 },
                                 easing: "bounce",
@@ -115,13 +128,38 @@ export default function Page() {
                         />
                     </VictoryChart>
                 </div>
+                <div className="image-container">
+                    <Image
+                        src="/../public/images/codesnap/advanced-charts-Bar.png"
+                        width={2000}
+                        height={2000}
+                        quality={100}
+                        alt="Code Snippet"
+                    />
+                </div>
             </article>
             <article>
                 <h3>Gestapeltes Säulendiagramm mit Legende</h3>
                 <code>
-                    Victory-Component:{" "}
-                    <Link href="https://formidable.com/open-source/victory/docs/victory-group" target="blank">
-                        VictoryGroup
+                    Victory-Components:{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-bar" target="blank">
+                        VictoryBar
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-chart" target="blank">
+                        VictoryChart
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-axis" target="blank">
+                        VictoryAxis
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-tooltip" target="blank">
+                        VictoryTooltip
+                    </Link>
+                    ,{" "}
+                    <Link href="https://formidable.com/open-source/victory/docs/victory-legend" target="blank">
+                        VictoryLegend
                     </Link>
                 </code>
                 <div>
@@ -252,6 +290,15 @@ export default function Page() {
                             ]}
                         />
                     </div>
+                </div>
+                <div className="image-container">
+                    <Image
+                        src="/../public/images/codesnap/advanced-charts-Group.png"
+                        width={2000}
+                        height={2000}
+                        quality={100}
+                        alt="Code Snippet"
+                    />
                 </div>
             </article>
         </div>
