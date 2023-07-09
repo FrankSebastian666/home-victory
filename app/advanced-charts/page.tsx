@@ -88,6 +88,11 @@ export default function Page() {
                                     flyoutStyle={{ stroke: "none", fill: "jungle" }}
                                 />
                             }
+                            // adding basic animations to the bars
+                            animate={{
+                                onEnter: { duration: 3000 },
+                                easing: "bounce",
+                            }}
                             // adding an event to the bars
                             events={[
                                 {
