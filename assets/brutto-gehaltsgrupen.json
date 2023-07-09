@@ -1,0 +1,8 @@
+[
+    { "gruppe": "bis1000", "anteil": 1.0 },
+    { "gruppe": "1000bis2000", "anteil": 9.1 },
+    { "gruppe": "2000bis3000", "anteil": 25.8 },
+    { "gruppe": "3000bis4000", "anteil": 25.7 },
+    { "gruppe": "4000bis5000", "anteil": 15.6 },
+    { "gruppe": "über5000", "anteil": 22.9 }
+]

@@ -8,12 +8,15 @@ import {
     VictoryGroup,
     VictoryLegend,
     VictoryLine,
+    VictoryPie,
     VictoryTheme,
     VictoryTooltip,
+    VictoryVoronoiContainer,
 } from "victory";
 import Link from "next/link";
 
 import bruttoNettoData from "./../assets/brutto-gehalt-de.json";
+import bruttoGruppen from "./../assets/brutto-gehaltsgrupen.json";
 
 // const secondVictoryBarDataKey = Object.keys(secondVictoryBarData);
 
@@ -94,7 +97,7 @@ export default function Page() {
                                     x="year"
                                     y="netto"
                                     cornerRadius={{ topLeft: 2, topRight: 2 }}
-                                    labels={({ datum }) => `$ ${datum.brutto}`}
+                                    labels={({ datum }) => `$ ${datum.netto}`}
                                     labelComponent={
                                         <VictoryTooltip
                                             // adding a custom flyout to the tooltip
@@ -140,6 +143,24 @@ export default function Page() {
                             padding={{ top: 20, bottom: 60, left: 80, right: 40 }}
                             height={350}
                             width={600}
+                            containerComponent={
+                                <VictoryVoronoiContainer
+                                    // voronoiDimension="y"
+                                    labels={({ datum }) =>
+                                        `${datum.year}: Brutto: ${datum.bruttoZuVorjahr} %, Netto: ${datum.nettoZuVorjahr} %`
+                                    }
+                                    labelComponent={
+                                        <VictoryTooltip
+                                            dy={-20}
+                                            constrainToVisibleArea
+                                            pointerLength={20}
+                                            pointerWidth={5}
+                                            style={{ fill: "white" }}
+                                            flyoutStyle={{ stroke: "none", fill: "jungle" }}
+                                        />
+                                    }
+                                />
+                            }
                         >
                             <VictoryAxis
                                 tickValues={[
@@ -199,10 +220,27 @@ export default function Page() {
                             />
                             <VictoryGroup colorScale={"qualitative"} domain={{ y: [-1, 5] }}>
                                 <VictoryLine data={bruttoNettoData} x="year" y="bruttoZuVorjahr" />
+                                <VictoryLine data={bruttoNettoData} x="year" y="nettoZuVorjahr" />
                             </VictoryGroup>
                         </VictoryChart>
                     </div>
                 </section>
+            </article>
+            <article>
+                <h2>
+                    Verteilung der sozialversicherungspflichtigen Vollzeitbeschäftigten in Deutschland nach
+                    Einkommensgruppen (Bruttoeinkommen pro Monat) von 2012 bis 2021
+                </h2>
+                <div>
+                    <VictoryPie
+                        theme={VictoryTheme.material}
+                        padding={{ top: 20, bottom: 60, left: 100, right: 100 }}
+                        data={bruttoGruppen}
+                        x="gruppe"
+                        y="anteil"
+                        style={{ data: { stroke: "white", strokeWidth: 1 } }}
+                    />
+                </div>
             </article>
         </div>
     );
