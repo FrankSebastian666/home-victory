@@ -203,6 +203,10 @@ export default function Page() {
                                         flyoutStyle={{ stroke: "none", fill: "jungle" }}
                                     />
                                 }
+                                animate={{
+                                    onEnter: { duration: 3000 },
+                                    easing: "backInOut",
+                                }}
                             />
                             <VictoryBar
                                 x="quarter"
@@ -219,6 +223,10 @@ export default function Page() {
                                         flyoutStyle={{ stroke: "none", fill: "rgb(69, 178, 157)" }}
                                     />
                                 }
+                                animate={{
+                                    onEnter: { duration: 3000 },
+                                    easing: "sinInOut",
+                                }}
                             />
                             <VictoryBar
                                 x="quarter"
@@ -235,6 +243,10 @@ export default function Page() {
                                         flyoutStyle={{ stroke: "none", fill: "rgb(239, 201, 76)" }}
                                     />
                                 }
+                                animate={{
+                                    onEnter: { duration: 3000 },
+                                    easing: "cubicInOut",
+                                }}
                             />
                             <VictoryBar
                                 x="quarter"
@@ -251,6 +263,10 @@ export default function Page() {
                                         flyoutStyle={{ stroke: "none", fill: "rgb(226, 122, 63)" }}
                                     />
                                 }
+                                animate={{
+                                    onEnter: { duration: 3000 },
+                                    easing: "circleOut",
+                                }}
                             />
                         </VictoryGroup>
                     </VictoryChart>
@@ -295,7 +311,7 @@ export default function Page() {
                     <Image
                         src="/../public/images/codesnap/advanced-charts-Group.png"
                         width={2000}
-                        height={2000}
+                        height={2050}
                         quality={100}
                         alt="Code Snippet"
                     />

@@ -28,3 +28,17 @@ img {
     margin: 0 auto;
     text-align: center;
 }
+
+p {
+    hyphens: auto;
+}
+
+.einkommen-pie-chart {
+    max-width: 66%;
+    margin: 0 auto;
+}
+
+.haushalts-gruppen-chart {
+    max-width: 80%;
+    margin: 0 auto;
+}

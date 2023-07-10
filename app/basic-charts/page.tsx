@@ -51,7 +51,7 @@ export default function Page() {
             <section>
                 <h2>Einfache Einbettung von Daten</h2>
                 <article>
-                    <h3>Innehrhalb einer JavaScript/TypeScript-Datei</h3>
+                    <h3>Innerhalb einer JavaScript/TypeScript-Datei</h3>
                     <ul>
                         <li>Die Daten können direkt im selben File wie die Victory-Charts definiert werden</li>
                         <li>Einfachste Variante: Im selben File wie die Victory-Komponenten</li>

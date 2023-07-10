@@ -14,16 +14,9 @@ export const metadata: Metadata = {
     },
 };
 
-// function switchTheme() {
-//     document.getElementById("theme-switcher")?.addEventListener("click", function () {
-//         if (document.getElementById("theme-switcher")?.classList.contains("token"))
-//         document.getElementById("theme-switcher")?.data-theme.;
-//     });
-// }
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" data-theme="light">
+        <html lang="de" data-theme="light">
             <body className="container">
                 <header>
                     <Navbar />

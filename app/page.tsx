@@ -39,19 +39,7 @@ export default function Page() {
                 <h2>Entwicklung von Brutto- und Nettoeinkommen</h2>
                 <section>
                     <h3>Durchschnittliches Brutto- und Nettoeinkommen seit 2008</h3>
-                    <code>
-                        Quelle:{" "}
-                        <Link href="https://www.destatis.de/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/Publikationen/Downloads-Inlandsprodukt/inlandsprodukt-vierteljahr-pdf-2180120.pdf?__blob=publicationFile">
-                            Destatis
-                        </Link>
-                    </code>
-                    <p>
-                        Im Jahr 2022 betrug der Durchschnitt der monatlichen Bruttolöhne/ Bruttogehälter je Arbeitnehmer
-                        in Deutschland 3.332 Euro. Abzüglich der Steuern und Sozialabgaben betrug der durchschnittliche
-                        monatliche Nettoverdienst je Arbeitnehmer in Deutschland 2.245 Euro. Der durchschnittliche
-                        Bruttomonatsverdienst eines vollzeitbeschäftigten Arbeitnehmers betrug im Jahr 2021 rund 4.100
-                        Euro.
-                    </p>
+
                     <div>
                         <VictoryChart
                             title="Brutto- und Nettoeinkommen in Deutschland"
@@ -162,9 +150,6 @@ export default function Page() {
                             ]}
                         />
                     </div>
-                </section>
-                <section>
-                    <h3>Entwicklung von Brutto und Netto im Vergleich zum Vorjahr</h3>
                     <code>
                         Quelle:{" "}
                         <Link href="https://www.destatis.de/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/Publikationen/Downloads-Inlandsprodukt/inlandsprodukt-vierteljahr-pdf-2180120.pdf?__blob=publicationFile">
@@ -172,13 +157,16 @@ export default function Page() {
                         </Link>
                     </code>
                     <p>
-                        Die Statistik zeigt die prozentuale Entwicklung der Brutto- und Nettoeinkommen in Deutschland im
-                        Vergleich zum jeweiligen Vorjahreswert. Dabei ist zu erkennen, dass die Werte sich meist nicht
-                        stark unterscheiden. In den Jahren 2010 und 2011 ist ersichtlich, dass das Nettoeinkommen pro
-                        Kopf stärker gestiegen ist als das Bruttoeinkommen, was auf Steuererleichterungen hindeutet. In
-                        Zeiten der aktuellen Inflation aufgrund des russischen Angriffskrieges gegen die Ukraine sind
-                        solche Erleichterungen für Bürger:innen noch nicht finanziell messbar.
+                        Im Jahr 2022 betrug der Durchschnitt der monatlichen Bruttolöhne/ Bruttogehälter je Arbeitnehmer
+                        in Deutschland 3.332 Euro. Abzüglich der Steuern und Sozialabgaben betrug der durchschnittliche
+                        monatliche Nettoverdienst je Arbeitnehmer in Deutschland 2.245 Euro. Der durchschnittliche
+                        Bruttomonatsverdienst eines vollzeitbeschäftigten Arbeitnehmers betrug im Jahr 2021 rund 4.100
+                        Euro.
                     </p>
+                </section>
+                <section>
+                    <h3>Entwicklung von Brutto und Netto im Vergleich zum Vorjahr</h3>
+
                     <div>
                         <VictoryChart
                             title="Brutto- und Nettoeinkommen in Deutschland"
@@ -199,7 +187,7 @@ export default function Page() {
                                             pointerLength={20}
                                             pointerWidth={5}
                                             style={{ fill: "white" }}
-                                            flyoutStyle={{ stroke: "none", fill: "jungle" }}
+                                            flyoutStyle={{ stroke: "none", fill: "steelblue" }}
                                         />
                                     }
                                 />
@@ -289,6 +277,20 @@ export default function Page() {
                             ]}
                         />
                     </div>
+                    <code>
+                        Quelle:{" "}
+                        <Link href="https://www.destatis.de/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/Publikationen/Downloads-Inlandsprodukt/inlandsprodukt-vierteljahr-pdf-2180120.pdf?__blob=publicationFile">
+                            Destatis
+                        </Link>
+                    </code>
+                    <p>
+                        Die Statistik zeigt die prozentuale Entwicklung der Brutto- und Nettoeinkommen in Deutschland im
+                        Vergleich zum jeweiligen Vorjahreswert. Dabei ist zu erkennen, dass die Werte sich meist nicht
+                        stark unterscheiden. In den Jahren 2010 und 2011 ist ersichtlich, dass das Nettoeinkommen pro
+                        Kopf stärker gestiegen ist als das Bruttoeinkommen, was auf Steuererleichterungen hindeutet. In
+                        Zeiten der aktuellen Inflation aufgrund des russischen Angriffskrieges gegen die Ukraine sind
+                        solche Erleichterungen für Bürger:innen noch nicht finanziell messbar.
+                    </p>
                 </section>
             </article>
             <article>
@@ -296,6 +298,55 @@ export default function Page() {
                     Verteilung der sozialversicherungspflichtigen Vollzeitbeschäftigten in Deutschland nach
                     Einkommensgruppen (Bruttoeinkommen pro Monat) von 2012 bis 2021
                 </h2>
+
+                <div className="einkommen-pie-chart">
+                    <VictoryPie
+                        theme={VictoryTheme.material}
+                        height={400}
+                        width={500}
+                        padding={{ top: 30, bottom: 50, left: 50, right: 50 }}
+                        data={bruttoGruppen}
+                        x="gruppe"
+                        y="anteil"
+                        style={{ data: { stroke: "white", strokeWidth: 1 } }}
+                        labels={({ datum }) => `${datum.gruppe}: ${datum.anteil} %`}
+                        innerRadius={50}
+                        labelComponent={
+                            <VictoryTooltip
+                                // adding a custom flyout to the tooltip
+                                pointerLength={30}
+                                pointerWidth={5}
+                                style={{ fill: "white", fontSize: 12 }}
+                                flyoutStyle={{ stroke: "none", fill: "grey", fontSize: 12 }}
+                            />
+                        }
+                    />
+                </div>
+                <div className="victory-label-center-div">
+                    <VictoryLegend
+                        height={80}
+                        title="Legend"
+                        padding={0}
+                        centerTitle
+                        orientation="horizontal"
+                        x={20}
+                        itemsPerRow={3}
+                        gutter={30}
+                        style={{
+                            border: { stroke: "none" },
+                            title: { fontSize: 0, display: "none" },
+                            labels: { fontSize: 10 },
+                        }}
+                        data={[
+                            { name: "bis 1000 €", symbol: { fill: "rgb(244, 81, 30)" } },
+                            { name: "über 1000 bis 2000 €", symbol: { fill: "rgb(255, 245, 157)" } },
+                            { name: "über 2000 bis 3000 €", symbol: { fill: "rgb(220, 231, 117)" } },
+                            { name: "über 3000 bis 4000 €", symbol: { fill: "#8BC34A" } },
+                            { name: "über 4000 bis 5000 €", symbol: { fill: "#00796B" } },
+                            { name: "über 5000 €", symbol: { fill: "#006064" } },
+                        ]}
+                    />
+                </div>
                 <code>
                     Quelle:{" "}
                     <Link href="https://de.statista.com/statistik/daten/studie/577307/umfrage/verteilung-der-beschaeftigten-in-deutschland-nach-einkommensgruppen/">
@@ -308,67 +359,16 @@ export default function Page() {
                     der sozialversicherungspflichtigen Vollzeitbeschäftigten in Deutschland nicht einmal 1.000 Euro im
                     Monat. Über ein Drittel hingegen verdienten mehr als 4000 Euro brutto im Monat.
                 </p>
-                <div>
-                    <VictoryPie
-                        theme={VictoryTheme.material}
-                        padding={{ top: 20, bottom: 0, left: 80, right: 80 }}
-                        data={bruttoGruppen}
-                        x="gruppe"
-                        y="anteil"
-                        style={{ data: { stroke: "white", strokeWidth: 1 } }}
-                        labels={({ datum }) => `${datum.gruppe}: ${datum.anteil} %`}
-                        innerRadius={10}
-                        labelComponent={
-                            <VictoryTooltip
-                                // adding a custom flyout to the tooltip
-                                pointerLength={30}
-                                pointerWidth={5}
-                                style={{ fill: "white", fontSize: 12 }}
-                                flyoutStyle={{ stroke: "none", fill: "grey" }}
-                            />
-                        }
-                    />
-                </div>
-                <div className="victory-label-center-div">
-                    <VictoryLegend
-                        height={70}
-                        title="Legend"
-                        centerTitle
-                        orientation="horizontal"
-                        x={10}
-                        itemsPerRow={3}
-                        gutter={25}
-                        style={{
-                            border: { stroke: "none" },
-                            title: { fontSize: 0, display: "none" },
-                            labels: { fontSize: 11 },
-                        }}
-                        data={[
-                            { name: "bis 1000 €", symbol: { fill: "rgb(244, 81, 30)" } },
-                            { name: "über 1000 bis 2000 €", symbol: { fill: "rgb(255, 245, 157)" } },
-                            { name: "über 2000 bis 3000 €", symbol: { fill: "rgb(220, 231, 117)" } },
-                            { name: "über 3000 bis 4000 €", symbol: { fill: "#8BC34A" } },
-                            { name: "über 4000 bis 5000 €", symbol: { fill: "#00796B" } },
-                            { name: "über 5000 €", symbol: { fill: "#006064" } },
-                        ]}
-                    />
-                </div>
             </article>
             <article>
                 <h2>Verteilung des jährlichen Nettoäquvalenzeinkommens nach Haushaltstyp 2021</h2>
-                <code>
-                    Quelle:{" "}
-                    <Link href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2022/10/PD22_N062_63.html">
-                        Destatis
-                    </Link>
-                </code>
-                <p>blabla</p>
-                <div>
+
+                <div className="haushalts-gruppen-chart">
                     <VictoryChart
                         horizontal
                         title="Verteilung Nettoäquivalenzeinkommen in Deutschland 2021"
                         domainPadding={20}
-                        padding={{ top: 20, bottom: 100, left: 180, right: 10 }}
+                        padding={{ top: 30, bottom: 100, left: 150, right: 10 }}
                         height={500}
                         width={600}
                         theme={VictoryTheme.material}
@@ -433,11 +433,11 @@ export default function Page() {
                                     <VictoryTooltip
                                         pointerLength={10}
                                         pointerWidth={5}
-                                        style={{ fill: "black", fontSize: 10 }}
-                                        flyoutStyle={{ stroke: "none", fill: "aliceblue" }}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "saddlebrown" }}
                                     />
                                 }
-                                style={{ data: { fill: "aliceblue" } }}
+                                style={{ data: { fill: "saddlebrown" } }}
                             />
                             <VictoryBar
                                 barWidth={8}
@@ -540,7 +540,7 @@ export default function Page() {
                 </div>
                 <div className="victory-label-center-div">
                     <VictoryLegend
-                        height={60}
+                        height={80}
                         title="Haushaltstypen"
                         centerTitle
                         orientation="horizontal"
@@ -559,11 +559,26 @@ export default function Page() {
                             { name: "Zwei Erwachsene / ein Kind", symbol: { fill: "chocolate" } },
                             { name: "Alleinerziehende[r]", symbol: { fill: "blueviolet" } },
                             { name: "+=3 Erwachsene", symbol: { fill: "aquamarine" } },
-                            { name: "Zwei Erwachsene", symbol: { fill: "aliceblue" } },
+                            { name: "Zwei Erwachsene", symbol: { fill: "saddlebrown" } },
                             { name: "Ein Erwachsener", symbol: { fill: "acidblue" } },
                         ]}
                     />
                 </div>
+                <code>
+                    Quelle:{" "}
+                    <Link href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2022/10/PD22_N062_63.html">
+                        Destatis
+                    </Link>
+                </code>
+                <p>
+                    Wie das Statistische Bundesamt (Destatis) mitteilt, stand nach Ergebnissen der Erhebung zu Einkommen
+                    und Lebensbedingungen (EU-SILC) 2021 einem Fünftel der Bevölkerung in Deutschland ein jährliches
+                    Nettoäquivalenzeinkommen von unter 16 300 Euro zur Verfügung. Beim Äquivalenzeinkommen handelt es
+                    sich um ein um Einspareffekte in Mehrpersonenhaushalten bereinigtes Pro-Kopf-Einkommen.
+                    Einkommensreferenzjahr ist das Vorjahr der Erhebung. So hatten zwei Fünftel (40 %) der Bevölkerung
+                    ein Nettoäquivalenzeinkommen von unter 22 000 Euro im Jahr. Auf der anderen Seite hatten zwei
+                    Fünftel (40 %) der Bevölkerung ein Einkommen von 28 400 Euro und mehr.
+                </p>
             </article>
         </div>
     );
