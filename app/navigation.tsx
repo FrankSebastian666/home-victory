@@ -47,15 +47,6 @@ const Navbar = () => {
                         Advanced Charts
                     </Link>
                 </li>
-                <li>
-                    <Link
-                        href="/animated-charts"
-                        className={getCurrentRoute === "/animated-charts" ? "active-nav-link" : "secondary outline"}
-                        role="button"
-                    >
-                        Animated Charts
-                    </Link>
-                </li>
             </ul>
         </nav>
     );

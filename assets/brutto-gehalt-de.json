@@ -1,0 +1,17 @@
+[
+    { "year": 2021, "brutto": 3199, "netto": 2165, "bruttoZuVorjahr": 3.29, "nettoZuVorjahr": 3.84 },
+    { "year": 2022, "brutto": 3332, "netto": 2245, "bruttoZuVorjahr": 4.16, "nettoZuVorjahr": 3.7 },
+    { "year": 2020, "brutto": 3097, "netto": 2085, "bruttoZuVorjahr": -0.1, "nettoZuVorjahr": 0.29 },
+    { "year": 2019, "brutto": 3100, "netto": 2079, "bruttoZuVorjahr": 3.02, "nettoZuVorjahr": 3.54 },
+    { "year": 2018, "brutto": 3009, "netto": 2008, "bruttoZuVorjahr": 3.15, "nettoZuVorjahr": 2.97 },
+    { "year": 2017, "brutto": 2917, "netto": 1950, "bruttoZuVorjahr": 2.64, "nettoZuVorjahr": 2.36 },
+    { "year": 2016, "brutto": 2842, "netto": 1905, "bruttoZuVorjahr": 2.49, "nettoZuVorjahr": 2.31 },
+    { "year": 2015, "brutto": 2733, "netto": 1862, "bruttoZuVorjahr": 2.97, "nettoZuVorjahr": 2.76 },
+    { "year": 2014, "brutto": 2693, "netto": 1812, "bruttoZuVorjahr": 2.94, "nettoZuVorjahr": 2.78 },
+    { "year": 2013, "brutto": 2616, "netto": 1763, "bruttoZuVorjahr": 3.5, "nettoZuVorjahr": 2.03 },
+    { "year": 2012, "brutto": 2560, "netto": 1728, "bruttoZuVorjahr": 2.65, "nettoZuVorjahr": 2.73 },
+    { "year": 2011, "brutto": 2487, "netto": 1682, "bruttoZuVorjahr": 0.13, "nettoZuVorjahr": 2.69 },
+    { "year": 2010, "brutto": 2403, "netto": 1638, "bruttoZuVorjahr": 1.56, "nettoZuVorjahr": 4.2 },
+    { "year": 2009, "brutto": 2341, "netto": 1572, "bruttoZuVorjahr": 0.85, "nettoZuVorjahr": 0.26 },
+    { "year": 2008, "brutto": 2338, "netto": 1568, "bruttoZuVorjahr": 0.45, "nettoZuVorjahr": 1.88 }
+]

@@ -1,0 +1,8 @@
+[
+    { "gruppe": "bis 1000 €", "anteil": 1.0 },
+    { "gruppe": "über 1000 € bis 2000 €", "anteil": 9.1 },
+    { "gruppe": "über 2000 € bis 3000 €", "anteil": 25.8 },
+    { "gruppe": "über 3000 € bis 4000 €", "anteil": 25.7 },
+    { "gruppe": "über 4000 € bis 5000 €", "anteil": 15.6 },
+    { "gruppe": "über 5000 €", "anteil": 22.9 }
+]
