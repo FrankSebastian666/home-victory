@@ -171,7 +171,8 @@ export default function Page() {
                     <ul>
                         <li>Rendert eine einzige Achse</li>
                         <li>
-                            Kann allein verwendet werden oder innerhalb VictoryChart mit anderen Achsen gruppiert werden
+                            Kann alleine verwendet werden oder innerhalb VictoryChart mit anderen Achsen gruppiert
+                            werden
                         </li>
                     </ul>
                     <div className="basic-chart-container">
@@ -209,7 +210,7 @@ export default function Page() {
                         </Link>
                     </code>
                     <ul>
-                        <li>Rendert Victory Children Komponenten in gesstapeltem Layout</li>
+                        <li>Rendert Victory Children Komponenten in gestapeltem Layout</li>
                         <li>Ähnlich wie Victorychart ein Wrapper-Component, der Layout an Children vererben kann</li>
                         <li>
                             Funktioniert mit VictoryArea, VictoryBar, VictoryCandlestick, VictoryErrorBar,
