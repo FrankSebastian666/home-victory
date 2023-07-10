@@ -2,8 +2,13 @@
 
 import "@picocss/pico/css/pico.css";
 import "./../globals.css";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
+import nodeLogo from "./../../public/images/Node.js_logo.svg.png";
+import requirementsImport from "./../../public/images/codesnap/requirements-import.png";
+import reactIcon from "./../../public/images/React-icon.svg.png";
+import nextSetupImage from "./../../public/images/Screenshot-next-js-setup.png";
 
 export default function Page() {
     return (
@@ -14,12 +19,7 @@ export default function Page() {
                     <h2>Node.js </h2>
                     <div></div>
                     <div></div>
-                    <Image
-                        src="/../public/images/Node.js_logo.svg.png"
-                        alt="Node.js_logo.svg.png"
-                        width={150}
-                        height={150}
-                    ></Image>
+                    <Image src={nodeLogo} alt="Node.js_logo.svg.png" width={150} height={150}></Image>
                 </div>
                 <kbd>Wichtige Laufzeit-Umgebung für JavaScript</kbd>
                 <div>
@@ -95,13 +95,7 @@ export default function Page() {
                             <b>Import im jeweiligen Skript </b> (hängt vom verwendeten Framework ab):
                         </li>
                     </ul>
-                    <Image
-                        src="/../public/images/codesnap/requirements-import.png"
-                        width={600}
-                        height={50}
-                        quality={100}
-                        alt="Code Snippet"
-                    />
+                    <Image src={requirementsImport} width={600} height={50} quality={100} alt="Code Snippet" />
                 </div>
             </article>
             <article>
@@ -109,12 +103,7 @@ export default function Page() {
                     <h2>React.js</h2>
                     <div></div>
                     <div></div>
-                    <Image
-                        src="/../public/images/React-icon.svg.png"
-                        alt="React.js Logo"
-                        width={100}
-                        height={100}
-                    ></Image>
+                    <Image src={reactIcon} alt="React.js Logo" width={100} height={100}></Image>
                 </div>
                 <kbd>Beliebtes Framework für Single-Page-Apps</kbd>
                 <div>
@@ -216,12 +205,7 @@ export default function Page() {
                         </ul>
                     </div>
                     <div>
-                        <Image
-                            src="/../public/images/Screenshot-next-js-setup.png"
-                            alt="Next.js Logo"
-                            width={192}
-                            height={689}
-                        ></Image>
+                        <Image src={nextSetupImage} alt="Next.js Logo" width={192} height={689}></Image>
                     </div>
                 </div>
             </article>
