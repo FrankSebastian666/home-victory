@@ -79,7 +79,7 @@ export default function Page() {
                                 tickValues={[500, 1000, 1500, 2000, 2500, 3000, 3500]}
                                 // tickFormat specifies how ticks should be displayed
                                 tickFormat={(x: any) => `${x}`}
-                                label="Monatliches Einkommen in €"
+                                label="Monatliches Einkommen in Euro"
                                 style={{
                                     axisLabel: { padding: 65, fontWeight: "bold" },
                                     grid: { stroke: "grey", size: 2, "stroke-dasharray": "5px, 5px" },
