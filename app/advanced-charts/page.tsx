@@ -70,7 +70,7 @@ export default function Page() {
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4]}
                             tickFormat={["Q1", "Q2", "Q3", "Q4"]}
-                            label="Quartal"
+                            label="Quarter"
                             style={{ axisLabel: { padding: 30 } }}
                         />
 
@@ -172,7 +172,7 @@ export default function Page() {
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4]}
                             tickFormat={["Q1", "Q2", "Q3", "Q4"]}
-                            label="Quartal"
+                            label="Quarter"
                             style={{ axisLabel: { padding: 35 } }}
                         />
 

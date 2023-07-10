@@ -36,7 +36,7 @@ export default function Page() {
             <h1>Einkommen von Arbeitnehmer:innen in Deutschland</h1>
 
             <article>
-                <h2>Entwicklung von Brutto- und Nettoeinkommen</h2>
+                <h2>Entwicklung von Brutto- und Nettoeinkommen 2008-2022</h2>
                 <section>
                     <h3>Durchschnittliches Brutto- und Nettoeinkommen seit 2008</h3>
 
@@ -157,22 +157,22 @@ export default function Page() {
                         </Link>
                     </code>
                     <p>
-                        Im Jahr 2022 betrug der Durchschnitt der monatlichen Bruttolöhne/ Bruttogehälter je Arbeitnehmer
-                        in Deutschland 3.332 Euro. Abzüglich der Steuern und Sozialabgaben betrug der durchschnittliche
-                        monatliche Nettoverdienst je Arbeitnehmer in Deutschland 2.245 Euro. Der durchschnittliche
-                        Bruttomonatsverdienst eines vollzeitbeschäftigten Arbeitnehmers betrug im Jahr 2021 rund 4.100
-                        Euro.
+                        Im Jahr 2022 betrug der Durchschnitt der monatlichen Bruttolöhne/ Bruttogehälter je
+                        Arbeitnehmer:in in Deutschland 3.332 Euro. Abzüglich der Steuern und Sozialabgaben betrug der
+                        durchschnittliche monatliche Nettoverdienst je Arbeitnehmer:in in Deutschland 2.245 Euro. Der
+                        durchschnittliche Bruttomonatsverdienst einer vollzeitbeschäftigten Arbeitnehmer:in betrug im
+                        Jahr 2021 rund 4.100 Euro.
                     </p>
                 </section>
                 <section>
-                    <h3>Entwicklung von Brutto und Netto im Vergleich zum Vorjahr</h3>
+                    <h3>Brutto- und Nettoeinkommen im Vergleich zu Vorjahreswerten</h3>
 
                     <div>
                         <VictoryChart
                             title="Brutto- und Nettoeinkommen in Deutschland"
                             domainPadding={20}
                             padding={{ top: 20, bottom: 60, left: 80, right: 40 }}
-                            height={350}
+                            height={400}
                             width={600}
                             containerComponent={
                                 <VictoryVoronoiContainer
@@ -216,7 +216,7 @@ export default function Page() {
                                     "'22",
                                 ]}
                                 label="Jahr"
-                                style={{ axisLabel: { padding: 45, fontWeight: "bold" }, tickLabels: { padding: 70 } }}
+                                style={{ axisLabel: { padding: 105, fontWeight: "bold" }, tickLabels: { padding: 70 } }}
                             />
 
                             <VictoryAxis
@@ -239,7 +239,7 @@ export default function Page() {
                                     " 5,0",
                                     "",
                                 ]}
-                                label="Veränderung im Vergleich zum Vorjahr in %"
+                                label="Veränderung im Vergleich zum Vorjahr in Prozent"
                                 style={{
                                     axisLabel: { padding: 65, fontWeight: "bold" },
                                     grid: {
@@ -296,7 +296,7 @@ export default function Page() {
             <article>
                 <h2>
                     Verteilung der sozialversicherungspflichtigen Vollzeitbeschäftigten in Deutschland nach
-                    Einkommensgruppen (Bruttoeinkommen pro Monat) von 2012 bis 2021
+                    Einkommensgruppen (Bruttoeinkommen pro Monat) im Jahr 2021
                 </h2>
 
                 <div className="einkommen-pie-chart">
@@ -316,8 +316,8 @@ export default function Page() {
                                 // adding a custom flyout to the tooltip
                                 pointerLength={30}
                                 pointerWidth={5}
-                                style={{ fill: "white", fontSize: 12 }}
-                                flyoutStyle={{ stroke: "none", fill: "grey", fontSize: 12 }}
+                                style={{ fill: "white", fontSize: 14 }}
+                                flyoutStyle={{ stroke: "none", fill: "midnightblue", fontSize: 14 }}
                             />
                         }
                     />
@@ -361,7 +361,7 @@ export default function Page() {
                 </p>
             </article>
             <article>
-                <h2>Verteilung des jährlichen Nettoäquvalenzeinkommens nach Haushaltstyp 2021</h2>
+                <h2>Verteilung des jährlichen Nettoäquvalenzeinkommens nach Haushaltstyp im Jahr 2021</h2>
 
                 <div className="haushalts-gruppen-chart">
                     <VictoryChart
@@ -392,7 +392,7 @@ export default function Page() {
                             style={{
                                 grid: { stroke: "none", size: 0 },
                                 axis: { stroke: "none" },
-                                axisLabel: { fontWeight: "bold", padding: 140 },
+                                axisLabel: { fontWeight: "bold", padding: 135, fontSize: 14 },
                                 tickLabels: { fontSize: 10 },
                             }}
                         />
@@ -401,7 +401,7 @@ export default function Page() {
                             label="Anteil in Prozent"
                             offsetY={70}
                             style={{
-                                axisLabel: { padding: 40, fontWeight: "bold" },
+                                axisLabel: { padding: 40, fontWeight: "bold", fontSize: 14 },
                                 tickLabels: { fontSize: 10 },
                                 grid: { stroke: "none", size: 0 },
                             }}
