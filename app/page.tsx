@@ -368,8 +368,8 @@ export default function Page() {
                         horizontal
                         title="Verteilung Nettoäquivalenzeinkommen in Deutschland 2021"
                         domainPadding={20}
-                        padding={{ top: 20, bottom: 60, left: 80, right: 40 }}
-                        height={800}
+                        padding={{ top: 20, bottom: 100, left: 180, right: 10 }}
+                        height={500}
                         width={600}
                         theme={VictoryTheme.material}
                     >
@@ -381,26 +381,188 @@ export default function Page() {
                                 "28 400 Euro bis unter 38 100 Euro",
                                 "ab 38 100 Euro",
                             ]}
-                            tickFormat={["", "", "", "", ""]}
+                            tickFormat={[
+                                "< 16 300 €",
+                                "16 300 € < 22 000 €",
+                                "22 000 € < 28 400 €",
+                                "28 400 € < 38 100 €",
+                                "ab 38 100 €",
+                            ]}
+                            label="Nettoäquivalenzeinkommen in Euro"
+                            style={{
+                                grid: { stroke: "none", size: 0 },
+                                axis: { stroke: "none" },
+                                axisLabel: { fontWeight: "bold", padding: 140 },
+                                tickLabels: { fontSize: 10 },
+                            }}
                         />
-                        <VictoryAxis dependentAxis />
-                        <VictoryGroup>
+                        <VictoryAxis
+                            dependentAxis
+                            label="Anteil in Prozent"
+                            offsetY={70}
+                            style={{
+                                axisLabel: { padding: 40, fontWeight: "bold" },
+                                tickLabels: { fontSize: 10 },
+                                grid: { stroke: "none", size: 0 },
+                            }}
+                        />
+                        <VictoryGroup offset={9}>
                             <VictoryBar
+                                barWidth={8}
                                 data={dataEinErw}
                                 x="gruppe"
                                 y="anteil"
-                                labels={({ datum }) => `${datum.anteil}`}
+                                labels={({ datum }) => `Ein Erwachsener: ${datum.anteil} %`}
                                 labelComponent={
                                     <VictoryTooltip
                                         pointerLength={10}
                                         pointerWidth={5}
                                         style={{ fill: "white", fontSize: 10 }}
-                                        flyoutStyle={{ stroke: "none", fill: "rgb(200, 100, 50" }}
+                                        flyoutStyle={{ stroke: "none", fill: "acidblue" }}
                                     />
                                 }
+                                style={{ data: { fill: "acidblue" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataZweiErw}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Zwei Erwachsene: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "black", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "aliceblue" }}
+                                    />
+                                }
+                                style={{ data: { fill: "aliceblue" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataPlusDreiErw}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `+=3 Erwachsene: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "black", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "aquamarine" }}
+                                    />
+                                }
+                                style={{ data: { fill: "aquamarine" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataAlleinErz}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Alleinerziehende[r]: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "blueviolet" }}
+                                    />
+                                }
+                                style={{ data: { fill: "blueviolet" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataZweiErwEinKind}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Zwei Erwachsene / ein Kind: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "chocolate" }}
+                                    />
+                                }
+                                style={{ data: { fill: "chocolate" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataZweiErwZweiKind}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Zwei Erwachsene / zwei Kinder: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "darkgreen" }}
+                                    />
+                                }
+                                style={{ data: { fill: "darkgreen" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataZweiErwDreiKind}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Zwei Erwachsene / drei Kinder: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "dodgerblue" }}
+                                    />
+                                }
+                                style={{ data: { fill: "dodgerblue" } }}
+                            />
+                            <VictoryBar
+                                barWidth={8}
+                                data={dataDreiErwMitKindern}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `Drei Erwachsene / Kinder: ${datum.anteil} %`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "tomato" }}
+                                    />
+                                }
+                                style={{ data: { fill: "tomato" } }}
                             />
                         </VictoryGroup>
                     </VictoryChart>
+                </div>
+                <div className="victory-label-center-div">
+                    <VictoryLegend
+                        height={60}
+                        title="Haushaltstypen"
+                        centerTitle
+                        orientation="horizontal"
+                        itemsPerRow={3}
+                        gutter={25}
+                        x={15}
+                        style={{
+                            border: { stroke: "none" },
+                            title: { fontSize: 0, display: "none" },
+                            labels: { fontSize: 8 },
+                        }}
+                        data={[
+                            { name: "Drei Erwachsene / Kinder", symbol: { fill: "tomato" } },
+                            { name: "Zwei Erwachsene / drei Kinder", symbol: { fill: "dodgerblue" } },
+                            { name: "Zwei Erwachsene / zwei Kinder", symbol: { fill: "darkgreen" } },
+                            { name: "Zwei Erwachsene / ein Kind", symbol: { fill: "chocolate" } },
+                            { name: "Alleinerziehende[r]", symbol: { fill: "blueviolet" } },
+                            { name: "+=3 Erwachsene", symbol: { fill: "aquamarine" } },
+                            { name: "Zwei Erwachsene", symbol: { fill: "aliceblue" } },
+                            { name: "Ein Erwachsener", symbol: { fill: "acidblue" } },
+                        ]}
+                    />
                 </div>
             </article>
         </div>
