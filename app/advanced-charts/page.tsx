@@ -14,7 +14,8 @@ import Link from "next/link";
 import secondVictoryBarData from "./second-victorybar-data.json" assert { type: "json" };
 import Image from "next/image";
 
-import advancedChartsBar from "/public/images/codesnap/advanced-charts-Bar.png";
+import advancedChartsBar from "./../../public/images/codesnap/advanced-charts-Bar.png";
+import advancedChartsGroup from "./../../public/images/codesnap/advanced-charts-Group.png";
 
 const secondVictoryBarDataKey = Object.keys(secondVictoryBarData);
 
@@ -304,13 +305,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div className="image-container">
-                    <Image
-                        src="/../public/images/codesnap/advanced-charts-Group.png"
-                        width={2000}
-                        height={2050}
-                        quality={100}
-                        alt="Code Snippet"
-                    />
+                    <Image src={advancedChartsGroup} width={2000} height={2050} quality={100} alt="Code Snippet" />
                 </div>
             </article>
         </div>

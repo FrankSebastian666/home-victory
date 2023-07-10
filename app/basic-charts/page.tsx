@@ -16,6 +16,19 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+import basicChartsData1 from "./../../public/images/codesnap/basic-charts-Data1.png";
+import basicChartsData2 from "./../../public/images/codesnap/basic-charts-Data2.png";
+import advancedChartsDataJSONImport from "./../../public/images/codesnap/advanced-charts-JSON-import.png";
+import advancedChartsDataJSON from "./../../public/images/codesnap/advanced-charts-JSON.png";
+import basicChartsChart from "./../../public/images/codesnap/basic-charts-Chart.png";
+import basicChartsAxis from "./../../public/images/codesnap/basic-charts-Axis.png";
+import bascChartsStack from "./../../public/images/codesnap/basic-charts-Stack.png";
+import basicChartsGroup from "./../../public/images/codesnap/basic-charts-Group.png";
+import basicChartsBar from "./../../public/images/codesnap/basic-charts-Bar.png";
+import basicChartsPie from "./../../public/images/codesnap/basic-charts-Pie.png";
+import basicChartsArea from "./../../public/images/codesnap/basic-charts-Area.png";
+import basicChartsLine from "./../../public/images/codesnap/basic-charts-Line.png";
+
 // inside app/basic-charts/page.tsx
 // here goes the sample data for the first basic bar chart
 const firstVictoryBarData = [
@@ -67,22 +80,10 @@ export default function Page() {
                     </ul>
                     <div className="grid">
                         <div className="image-container">
-                            <Image
-                                src="/../public/images/codesnap/basic-charts-Data1.png"
-                                width={2000}
-                                height={500}
-                                quality={100}
-                                alt="Code Snippet"
-                            />
+                            <Image src={basicChartsData1} width={2000} height={500} quality={100} alt="Code Snippet" />
                         </div>
                         <div className="image-container">
-                            <Image
-                                src="/../public/images/codesnap/basic-charts-Data2.png"
-                                width={2000}
-                                height={500}
-                                quality={100}
-                                alt="Code Snippet"
-                            />
+                            <Image src={basicChartsData2} width={2000} height={500} quality={100} alt="Code Snippet" />
                         </div>
                     </div>
                 </article>
@@ -104,7 +105,7 @@ export default function Page() {
                             </ul>
                             <div className="image-container">
                                 <Image
-                                    src="/../public/images/codesnap/advanced-charts-JSON-import.png"
+                                    src={advancedChartsDataJSONImport}
                                     width={2000}
                                     height={500}
                                     quality={100}
@@ -115,7 +116,7 @@ export default function Page() {
                         <div>
                             <div className="image-container">
                                 <Image
-                                    src="/../public/images/codesnap/advanced-charts-JSON.png"
+                                    src={advancedChartsDataJSON}
                                     width={2000}
                                     height={500}
                                     quality={100}
@@ -156,13 +157,7 @@ export default function Page() {
                         />
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Chart.png"
-                            width={800}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsChart} width={800} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
                 <article>
@@ -202,13 +197,7 @@ export default function Page() {
                         </VictoryChart>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Axis.png"
-                            width={1000}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsAxis} width={1000} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
                 <article>
@@ -254,13 +243,7 @@ export default function Page() {
                         </VictoryStack>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Stack.png"
-                            width={800}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={bascChartsStack} width={800} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
                 <article>
@@ -320,13 +303,7 @@ export default function Page() {
                         </VictoryChart>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Group.png"
-                            width={1000}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsGroup} width={1000} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
             </section>
@@ -354,13 +331,7 @@ export default function Page() {
                             />
                         </div>
                         <div className="image-container">
-                            <Image
-                                src="/../public/images/codesnap/basic-charts-Bar.png"
-                                width={2000}
-                                height={2000}
-                                quality={100}
-                                alt="Code Snippet"
-                            />
+                            <Image src={basicChartsBar} width={2000} height={2000} quality={100} alt="Code Snippet" />
                         </div>
                     </div>
                 </article>
@@ -384,13 +355,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Pie.png"
-                            width={2000}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsPie} width={2000} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
 
@@ -417,13 +382,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Area.png"
-                            width={900}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsArea} width={900} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
 
@@ -443,13 +402,7 @@ export default function Page() {
                         </div>
                     </div>
                     <div className="image-container">
-                        <Image
-                            src="/../public/images/codesnap/basic-charts-Line.png"
-                            width={900}
-                            height={500}
-                            quality={100}
-                            alt="Code Snippet"
-                        />
+                        <Image src={basicChartsLine} width={900} height={500} quality={100} alt="Code Snippet" />
                     </div>
                 </article>
             </section>
