@@ -1,0 +1,58 @@
+{
+    "Ein Erwachsener": [
+        { "gruppe": "< 16 300 Euro", "anteil": 32.2 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 21.0 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 19.2 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 14.9 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 12.7 }
+    ],
+    "Zwei Erwachsene": [
+        { "gruppe": "< 16 300 Euro", "anteil": 14.9 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 17.6 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 18.5 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 21.2 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 27.8 }
+    ],
+    "Drei und mehr Erwachsene": [
+        { "gruppe": "< 16 300 Euro", "anteil": 9.4 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 14.4 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 20.5 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 30.4 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 25.3 }
+    ],
+    "Alleinerziehende": [
+        { "gruppe": "< 16 300 Euro", "anteil": 33.2 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 31.4 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 20.0 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 9.6 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 5.9 }
+    ],
+    "Zwei Erwachsene mit einem Kind": [
+        { "gruppe": "< 16 300 Euro", "anteil": 11.9 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 17.8 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 21.4 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 24.8 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 24.1 }
+    ],
+    "Zwei Erwachsene mit zwei Kindern": [
+        { "gruppe": "< 16 300 Euro", "anteil": 15.7 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 20.3 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 23.9 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 20.9 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 19.2 }
+    ],
+    "Zwei Erwachsene mit drei und mehr Kindern": [
+        { "gruppe": "< 16 300 Euro", "anteil": 30.6 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 27.1 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 17.0 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 16.3 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 9.0 }
+    ],
+    "Drei und mehr Erwachsene mit Kindern": [
+        { "gruppe": "< 16 300 Euro", "anteil": 20.7 },
+        { "gruppe": "16 300 Euro bis unter 22 000 Euro", "anteil": 22.0 },
+        { "gruppe": "22 000 Euro bis unter 28 400 Euro", "anteil": 21.6 },
+        { "gruppe": "28 400 Euro bis unter 38 100 Euro", "anteil": 21.1 },
+        { "gruppe": "ab 38 100 Euro", "anteil": 14.6 }
+    ]
+}

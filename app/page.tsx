@@ -9,6 +9,7 @@ import {
     VictoryLegend,
     VictoryLine,
     VictoryPie,
+    VictoryStack,
     VictoryTheme,
     VictoryTooltip,
     VictoryVoronoiContainer,
@@ -18,7 +19,15 @@ import Link from "next/link";
 import bruttoNettoData from "./../assets/brutto-gehalt-de.json";
 import bruttoGruppen from "./../assets/brutto-gehaltsgrupen.json";
 
-// const secondVictoryBarDataKey = Object.keys(secondVictoryBarData);
+import haushaltGruppen from "./../assets/haushalte-einkommensgruppen.json";
+const dataEinErw = haushaltGruppen["Ein Erwachsener"];
+const dataZweiErw = haushaltGruppen["Zwei Erwachsene"];
+const dataPlusDreiErw = haushaltGruppen["Drei und mehr Erwachsene"];
+const dataAlleinErz = haushaltGruppen["Alleinerziehende"];
+const dataZweiErwEinKind = haushaltGruppen["Zwei Erwachsene mit einem Kind"];
+const dataZweiErwZweiKind = haushaltGruppen["Zwei Erwachsene mit zwei Kindern"];
+const dataZweiErwDreiKind = haushaltGruppen["Zwei Erwachsene mit drei und mehr Kindern"];
+const dataDreiErwMitKindern = haushaltGruppen["Drei und mehr Erwachsene mit Kindern"];
 
 // this is the UI for the basic-charts URL
 export default function Page() {
@@ -343,6 +352,55 @@ export default function Page() {
                             { name: "über 5000 €", symbol: { fill: "#006064" } },
                         ]}
                     />
+                </div>
+            </article>
+            <article>
+                <h2>Verteilung des jährlichen Nettoäquvalenzeinkommens nach Haushaltstyp 2021</h2>
+                <code>
+                    Quelle:{" "}
+                    <Link href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2022/10/PD22_N062_63.html">
+                        Destatis
+                    </Link>
+                </code>
+                <p>blabla</p>
+                <div>
+                    <VictoryChart
+                        horizontal
+                        title="Verteilung Nettoäquivalenzeinkommen in Deutschland 2021"
+                        domainPadding={20}
+                        padding={{ top: 20, bottom: 60, left: 80, right: 40 }}
+                        height={800}
+                        width={600}
+                        theme={VictoryTheme.material}
+                    >
+                        <VictoryAxis
+                            tickValues={[
+                                "< 16 300 Euro",
+                                "16 300 Euro bis unter 22 000 Euro",
+                                "22 000 Euro bis unter 28 400 Euro",
+                                "28 400 Euro bis unter 38 100 Euro",
+                                "ab 38 100 Euro",
+                            ]}
+                            tickFormat={["", "", "", "", ""]}
+                        />
+                        <VictoryAxis dependentAxis />
+                        <VictoryGroup>
+                            <VictoryBar
+                                data={dataEinErw}
+                                x="gruppe"
+                                y="anteil"
+                                labels={({ datum }) => `${datum.anteil}`}
+                                labelComponent={
+                                    <VictoryTooltip
+                                        pointerLength={10}
+                                        pointerWidth={5}
+                                        style={{ fill: "white", fontSize: 10 }}
+                                        flyoutStyle={{ stroke: "none", fill: "rgb(200, 100, 50" }}
+                                    />
+                                }
+                            />
+                        </VictoryGroup>
+                    </VictoryChart>
                 </div>
             </article>
         </div>
